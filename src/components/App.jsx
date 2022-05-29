@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { nanoid } from 'nanoid';
 import ContactForm from './ContactsForm/ContactForm';
 export class App extends Component {
   static defaultProps = {
@@ -8,10 +9,10 @@ export class App extends Component {
     contacts: this.props.contacts,
   };
 
-  // addContact = e => {
-  //   e.preventDefault();
-  //   console.log(e);
-  // };
+  addContact = contact => {
+    contact.id = nanoid();
+    this.setState(prevState => prevState.contacts.push(contact));
+  };
 
   render() {
     return (
@@ -25,7 +26,7 @@ export class App extends Component {
           color: '#010101',
         }}
       >
-        <ContactForm />
+        <ContactForm onSubmit={this.addContact} />
       </div>
     );
   }
