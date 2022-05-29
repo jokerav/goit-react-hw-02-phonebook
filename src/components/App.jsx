@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import ContactsForm from './ContactsForm/ContactsForm';
+import ContactForm from './ContactsForm/ContactForm';
 export class App extends Component {
   static defaultProps = {
     contacts: [],
@@ -7,19 +7,25 @@ export class App extends Component {
   state = {
     contacts: this.props.contacts,
   };
+
+  // addContact = e => {
+  //   e.preventDefault();
+  //   console.log(e);
+  // };
+
   render() {
     return (
       <div
         style={{
-          height: '100vh',
-          display: 'flex',
+          // height: '100vh',
+          // display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           fontSize: 40,
           color: '#010101',
         }}
       >
-        <ContactsForm />
+        <ContactForm />
       </div>
     );
   }
