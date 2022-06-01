@@ -28,11 +28,12 @@ export class App extends Component {
   };
 
   addContact = contact => {
-    if (!this.isNameInPhonebook(contact.name)) {
+    const { name } = contact;
+    if (!this.isNameInPhonebook(name)) {
       contact.id = nanoid(5);
       this.setState(prevState => prevState.contacts.push(contact));
     } else {
-      alert(`${contact.name} is already in contacts`);
+      alert(`${name} is already in contacts`);
     }
   };
   onFilterChange = e => {
