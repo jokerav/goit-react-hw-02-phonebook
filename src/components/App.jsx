@@ -18,9 +18,24 @@ export class App extends Component {
     filter: this.props.filter,
   };
 
+  isNameInPhonebook = name => {
+    for (const contact of this.state.contacts) {
+      if (contact.name === name) {
+        console.log('in the book');
+        return true;
+      }
+    }
+    console.log('NOT in the book');
+    return false;
+  };
+
   addContact = contact => {
-    contact.id = nanoid();
-    this.setState(prevState => prevState.contacts.push(contact));
+    if (!this.isNameInPhonebook(contact.name)) {
+      contact.id = nanoid(5);
+      this.setState(prevState => prevState.contacts.push(contact));
+    } else {
+      alert(`${contact.name} is already in contacts`);
+    }
   };
   onFilterChange = e => {
     const { value } = e.currentTarget;
