@@ -1,8 +1,13 @@
-import Contact from './Contact';
-const ContactList = ({ contacts }) => (
+import Contact from '../Contact/Contact';
+const ContactList = ({ contacts, onDelete }) => (
   <ul>
     {contacts.map(contact => (
-      <Contact key={contact.id} contact={contact} />
+      <Contact
+        key={contact.id}
+        contact={contact}
+        onDelete={onDelete}
+        id={contact.id}
+      />
     ))}
   </ul>
 );
