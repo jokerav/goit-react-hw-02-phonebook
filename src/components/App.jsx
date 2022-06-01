@@ -21,11 +21,9 @@ export class App extends Component {
   isNameInPhonebook = name => {
     for (const contact of this.state.contacts) {
       if (contact.name === name) {
-        console.log('in the book');
         return true;
       }
     }
-    console.log('NOT in the book');
     return false;
   };
 
