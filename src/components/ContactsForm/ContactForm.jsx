@@ -52,9 +52,9 @@ class ContactForm extends Component {
 
 export default ContactForm;
 ContactForm.propTypes = {
-  onSubmit: PropTypes.func,
+  onSubmit: PropTypes.func.isRequired,
   // я не уверен нужно ли описывать value и onChange
   // они вроде не пропы, но приходят "извне"
-  value: PropTypes.string,
-  onChange: PropTypes.func,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
