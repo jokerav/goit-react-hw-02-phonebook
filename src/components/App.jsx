@@ -15,9 +15,9 @@ export class App extends Component {
   };
 
   isNameInPhonebook = name => {
-    name = name.toLowerCase();
+    const nameInLowerCase = name.toLowerCase();
     for (const contact of this.state.contacts) {
-      if (contact.name.toLowerCase() === name) {
+      if (contact.name.toLowerCase() === nameInLowerCase) {
         return true;
       }
     }
