@@ -13,7 +13,7 @@ const ContactList = ({ contacts, onDelete }) => (
   </ul>
 );
 export default ContactList;
-Contact.propType = {
+ContactList.propType = {
   contacts: PropTypes.exact({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

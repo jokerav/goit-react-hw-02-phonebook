@@ -4,7 +4,7 @@ import ContactForm from './ContactsForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 export class App extends Component {
-  static defaultProps = {
+  state = {
     contacts: [
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
       { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
@@ -13,14 +13,11 @@ export class App extends Component {
     ],
     filter: '',
   };
-  state = {
-    contacts: this.props.contacts,
-    filter: this.props.filter,
-  };
 
   isNameInPhonebook = name => {
+    name = name.toLowerCase();
     for (const contact of this.state.contacts) {
-      if (contact.name === name) {
+      if (contact.name.toLowerCase() === name) {
         return true;
       }
     }
@@ -40,9 +37,7 @@ export class App extends Component {
     const { value } = e.currentTarget;
     this.setState({ filter: value });
   };
-  onDelete = e => {
-    console.log(e);
-  };
+
   deleteContact = id => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== id),

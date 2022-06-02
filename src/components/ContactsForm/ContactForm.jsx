@@ -52,6 +52,9 @@ class ContactForm extends Component {
 
 export default ContactForm;
 ContactForm.propTypes = {
+  onSubmit: PropTypes.func,
+  // я не уверен нужно ли описывать value и onChange
+  // они вроде не пропы, но приходят "извне"
   value: PropTypes.string,
   onChange: PropTypes.func,
 };
