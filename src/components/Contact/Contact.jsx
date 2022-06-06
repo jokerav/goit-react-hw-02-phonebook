@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-const Contact = ({ contact, onDelete, id }) => {
-  const { name, number } = contact;
+const Contact = ({ contact, onDelete }) => {
+  const { name, number, id } = contact;
   return (
     <li>
       <p>
@@ -20,5 +20,4 @@ Contact.propTypes = {
     number: PropTypes.string.isRequired,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
 };
